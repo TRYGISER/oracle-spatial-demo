@@ -1,12 +1,16 @@
-connect sys/system@xe as sysdba;
+connect sys/system@orcl as sysdba;
 
 drop user spatialdemo cascade;
 create user spatialdemo default tablespace users identified by spatialdemo;
-grant all privilege to spatialdemo;
+--grant all privilege to spatialdemo;
+grant dba to szcwm;  
+grant unlimited tablespace to spatialdemo;
+grant connect,resource,alter system,debug connect session,select any table,delete any table,drop any table,alter any table to spatialdemo ;
+
 
 DISCONNECT;
 
-connect spatialdemo/spatialdemo@xe;
+connect spatialdemo/spatialdemo@orcl;
 
 CREATE TABLE city (
 	id NUMBER(10,0), 
