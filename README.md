@@ -21,3 +21,7 @@ Setup (Windows)
 
    On later runs the first command can be skipped.
 4. Open [http://localhost:8080/oracle-spatial-demo/](http://localhost:8080/oracle-spatial-demo/).
+
+
+tips:
+if it crash with "invalid LOC header (bad signature)",use 'mvn test' command in the directory of this project to find what is wrong in this project.Oftenlly it's comes from bad jar package that not download complete by maven.you can delete the repository and let maven redownload that repository.
